@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		523543CD1854632400300EAE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 523543CC1854632400300EAE /* main.cpp */; };
 		523543CF1854632400300EAE /* user_influential_LR.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 523543CE1854632400300EAE /* user_influential_LR.1 */; };
+		523543DD1854634900300EAE /* UserInfluenceLR_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 523543D81854634900300EAE /* UserInfluenceLR_main.cpp */; };
+		523543DE1854634900300EAE /* UserInfluenceLR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 523543D91854634900300EAE /* UserInfluenceLR.cpp */; };
+		523543DF1854634900300EAE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 523543DB1854634900300EAE /* util.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +28,15 @@
 
 /* Begin PBXFileReference section */
 		523543C81854632400300EAE /* user_influential_LR */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = user_influential_LR; sourceTree = BUILT_PRODUCTS_DIR; };
-		523543CC1854632400300EAE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		523543CE1854632400300EAE /* user_influential_LR.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = user_influential_LR.1; sourceTree = "<group>"; };
+		523543D51854634900300EAE /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		523543D61854634900300EAE /* SortHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortHeap.h; sourceTree = "<group>"; };
+		523543D71854634900300EAE /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
+		523543D81854634900300EAE /* UserInfluenceLR_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserInfluenceLR_main.cpp; sourceTree = "<group>"; };
+		523543D91854634900300EAE /* UserInfluenceLR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserInfluenceLR.cpp; sourceTree = "<group>"; };
+		523543DA1854634900300EAE /* UserInfluenceLR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfluenceLR.h; sourceTree = "<group>"; };
+		523543DB1854634900300EAE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		523543DC1854634900300EAE /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +69,14 @@
 		523543CB1854632400300EAE /* user_influential_LR */ = {
 			isa = PBXGroup;
 			children = (
-				523543CC1854632400300EAE /* main.cpp */,
+				523543D51854634900300EAE /* constants.h */,
+				523543D61854634900300EAE /* SortHeap.h */,
+				523543D71854634900300EAE /* Twitter.h */,
+				523543D81854634900300EAE /* UserInfluenceLR_main.cpp */,
+				523543D91854634900300EAE /* UserInfluenceLR.cpp */,
+				523543DA1854634900300EAE /* UserInfluenceLR.h */,
+				523543DB1854634900300EAE /* util.cpp */,
+				523543DC1854634900300EAE /* util.h */,
 				523543CE1854632400300EAE /* user_influential_LR.1 */,
 			);
 			path = user_influential_LR;
@@ -117,7 +133,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523543CD1854632400300EAE /* main.cpp in Sources */,
+				523543DD1854634900300EAE /* UserInfluenceLR_main.cpp in Sources */,
+				523543DE1854634900300EAE /* UserInfluenceLR.cpp in Sources */,
+				523543DF1854634900300EAE /* util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
