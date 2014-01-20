@@ -117,7 +117,9 @@ void UserInfluenceLR::LR(int step_count, double lambda1, double lambda2, double 
             lr[gateway].auth += beta1 * gatewayCount * (1/(1+exp(lr[gateway].auth)));
             map<string,int>::iterator routerIter;
             for (routerIter = twiiterIter->routerInfo.begin(); routerIter != twiiterIter->routerInfo.end(); routerIter++) {
-                lr[gateway].auth += beta1 * routerIter->second * (1/(1+exp(lr[gateway].auth + lr[routerIter->first].hub)));
+//                lr[gateway].auth += beta1 * routerIter->second * (1/(1+exp(lr[gateway].auth + lr[routerIter->first].hub)));//无约束梯度下降版本
+                lr[gateway].auth += beta1 * routerIter->second * (1/(1+exp(lr[gateway].auth + lr[routerIter->first].hub)))
+                                  - beta1 * routerIter->second * 0.1 * pow((1 + 1/exp(lr[gateway].auth + lr[routerIter->first].hub)),(routerIter->second+1)) * (1/exp(lr[gateway].auth + lr[routerIter->first].hub));//有约束梯度下降版本
             }
         }
         
@@ -134,7 +136,9 @@ void UserInfluenceLR::LR(int step_count, double lambda1, double lambda2, double 
             
             map<string,int>::iterator routerIter;
             for (routerIter = twiiterIter->routerInfo.begin(); routerIter != twiiterIter->routerInfo.end(); routerIter++) {
-                lr[routerIter->first].hub += beta2 * routerIter->second * (1/(1+exp(lr[gateway].auth + lr[routerIter->first].hub)));
+//                lr[routerIter->first].hub += beta2 * routerIter->second * (1/(1+exp(lr[gateway].auth + lr[routerIter->first].hub)));//无约束梯度下降
+               lr[routerIter->first].hub += beta2 * routerIter->second * (1/(1+exp(lr[gateway].auth + lr[routerIter->first].hub)))
+                                          - beta2 * routerIter->second * 0.1 * pow((1 + 1/exp(lr[gateway].auth + lr[routerIter->first].hub)),(routerIter->second+1)) * (1/exp(lr[gateway].auth + lr[routerIter->first].hub));//有约束梯度下降版本
             }
         }
         
